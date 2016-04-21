@@ -14,6 +14,7 @@ def CelsiusFahrenheitTemp():
         print(FTemp,"F")
         CTemp = CTemp+5
 
-
-
 main()
+
+for celsius in range (0,101,5):
+    print("Celsius:",celsius, "Fahrenheit:",float(1.8*celsius+32))
