@@ -7,7 +7,7 @@ def CelsiusFahrenheitTemp():
     CelsiusFahrenheitTitle="Celsius   Fahrenheit"
     print(CelsiusFahrenheitTitle)
     CTemp = 0
-    count = 100
+    count = 101
     while CTemp<count:
         FTemp=float(1.8*CTemp+32)
         print(CTemp,"C",end="    ")
