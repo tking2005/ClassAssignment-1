@@ -38,7 +38,14 @@ def getQuadraticEquation():
                 print("That is not an integer!")
 
             print("The following quadratic equation will compute:")
-            print("(",valueA,"*",valueX,"^","2) +",valueB,"+",valueC)
+            if valueB<0 and valueC<0:
+                print(valueA,"X","^","2",valueB,"X",valueC)
+            elif valueB<0:
+                print(valueA,"X" , "^" , "2", valueB , "X", "+" , valueC)
+            elif valueC<0:
+                print(valueA , "X" , "^" , "2", "+" , valueB , "X", valueC)
+            else:
+                print(valueA , "X" , "^" , "2", "+" , valueB ,"X", "+", valueC)
             quadraticEquation = (valueA*(valueX**2)+(valueB*valueX)+(valueC))
             print("The value of the quadratic equation is:",quadraticEquation)
             wantToContinue = str(input("-----Press Q if you want to quit, all other input continues:"))
