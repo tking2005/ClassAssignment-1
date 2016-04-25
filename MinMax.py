@@ -1,37 +1,71 @@
 def main():
-    getMinMaxNum()
+    global iterations
+    iterations = getIterations()
+    global numList
+    numList(iterations)
+    getMin(numList)
 
 
-def getMinMaxNum():
-    continueProgram = True
-    numTuple =()
-    while(continueProgram==True):
-        numTuple=int(input("Enter your numbers followed by a comma:"))
+
+def getIterations():
+    return int(input("How many numbers would you like to compare?"))
+
+def numList(iteration):
+
+    numList = []
+    for iteration in range(0,iteration):
+        num = int(input("Enter a number:"))
         numList.append(num)
-        favColor=str(input("Enter your favorite color:"))
-        colorList.append(favColor)
-        lengthofNameList=len(nameList)
-        count=0
-        for count in range(0, lengthofNameList):
-            print("Hello there!")
-            print(nameList[count],", your favorite color is",colorList[count])
-            print("That's fantastic!")
-        wantToContinue=str(input("-----Press Q if you want to quit, all other input continues:"))
-        wantToContinue = wantToContinue.strip()
-        if wantToContinue == "Q" or wantToContinue == "q":
-            continueProgram = False
+    print("Your list of numbers are:")
+    print(numList)
+
+
+    count = 0
+    for count in range(0,iteration+1):
+        if numList[count]>=numList[count+1]:
+            maxNum=numList[count]
+        else:
+            maxNum=numList[count+1]
+
+        #print(numList[count])
+        count = count + 1
+    print(maxNum)
+
+
+
+
+
+
+
+    while numList:
+        minNum = numList[0]  # arbitrary number in list
+        index=0
+        for index in range (iterations):
+            if numList[index] < numList[index+1]:
+                minNum = numList[index]
+            else:
+                minNum=minNum
+    print("The minimum number is:")
+    print(minNum)
+
+    while numList:
+        maxNum = numList[0]
+        index = 0
+
+        for index in range(len(numList)):
+            if maxNum > numList[index + 1]:
+                maxNum = numList[index]
+    print("The maximum number is:")
+    print(maxNum)
+
+
+
+'''continueProgram = True
+while (continueProgram == True):
+    wantToContinue = str(input("-----Press Q if you want to quit, all other input continues:"))
+    wantToContinue = wantToContinue.strip()
+    if wantToContinue == "Q" or wantToContinue == "q":
+        continueProgram = False
+        '''
 
 main()
-
-
-
-data_list = [-5, -23, 5, 0, 23, -6, 23, 67]
-
-new_list = []
-
-minimum = data_list[0]  # arbitrary number in list
-
-for x in data_list:
-  if x < minimum:
-    minimum = value
-    new_list.append(i)
