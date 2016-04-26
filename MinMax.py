@@ -1,37 +1,53 @@
 def main():
-    getMinMaxNum()
+
+    global iterations
+    iterations = getIterations()
+    global numList
+    numList=getNumList()
+    getMin(numList)
+    getMax(numList)
+    programContinues()
+
+    #getList(iterations)
+    #getMinMaxNum()
 
 
-def getMinMaxNum():
-    continueProgram = True
-    numTuple =()
-    while(continueProgram==True):
-        numTuple=int(input("Enter your numbers followed by a comma:"))
+def getIterations():
+    return int(input("How many numbers would you like to compare?"))
+
+def getNumList():
+    numList=[]
+    num=()
+    for iteration in range(0,iterations):
+        num=int(input("Enter your number:"))
         numList.append(num)
-        favColor=str(input("Enter your favorite color:"))
-        colorList.append(favColor)
-        lengthofNameList=len(nameList)
-        count=0
-        for count in range(0, lengthofNameList):
-            print("Hello there!")
-            print(nameList[count],", your favorite color is",colorList[count])
-            print("That's fantastic!")
+    print(numList)
+    return numList
+
+def getMin(numCompare):
+    numMin = numCompare[0]
+    for iteration in range(0,iterations):
+        if numMin>numCompare[iteration]:
+            numMin=numCompare[iteration]
+    print("Your min number is:")
+    print(numMin)
+
+def getMax(numCompare):
+    numMax = numCompare[0]
+    for iteration in range(0, iterations):
+        if numMax < numCompare[iteration]:
+            numMax = numCompare[iteration]
+    print("Your max number is:")
+    print(numMax)
+
+def programContinues():
+    continueProgram = True
+    while(continueProgram==True):
         wantToContinue=str(input("-----Press Q if you want to quit, all other input continues:"))
         wantToContinue = wantToContinue.strip()
         if wantToContinue == "Q" or wantToContinue == "q":
             continueProgram = False
+        else:
+            main()
 
 main()
-
-
-
-data_list = [-5, -23, 5, 0, 23, -6, 23, 67]
-
-new_list = []
-
-minimum = data_list[0]  # arbitrary number in list
-
-for x in data_list:
-  if x < minimum:
-    minimum = value
-    new_list.append(i)
