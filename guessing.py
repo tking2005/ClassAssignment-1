@@ -18,22 +18,31 @@ def guessRandomNumber (randomNumb):
     while (continueProgram == True):
         print("Welcome to the Number Guessing Game!!!")
         continueProgram = True
-
-
         print("What number am I thinking of from 1 to 10?")
-
+        global num
         guessNum=False
         guessChance=1
         while (guessNum==False):
             validInput = False
 
             while (validInput == False):
-                num = int(input("Please guess a number from 1 to 10:"))
-                if num<11 and num>0:
+                global num
+                try:
+                    num = int(input("Please guess a number from 1 to 10:")) and 0<num<11
+                    return num
+                    validInput = True
+                except:
+                    print("DOPE! please guess a NUMBER from 1 to 10!")
+
+
+                '''if num<11 and num>0 :
                     validInput = True
                 else:
                     print("DOPE! please guess a NUMBER from 1 to 10!")
 
+
+                    print("DOPE! please guess a NUMBER from 1 to 10!") 
+'''
 
             if num == randomNumb:
                     print("Hooray! You guessed the number I was thinking of!!!!")
