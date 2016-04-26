@@ -18,7 +18,7 @@ def guessRandomNumber (randomNumb):
     while (continueProgram == True):
         print("Welcome to the Number Guessing Game!!!")
         continueProgram = True
-        print("What number am I thinking of from 1 to 10?")
+        print("What number am I thinking of from 1 to 10? You have 3 chances!")
         global num
         guessNum=False
         guessChance=1
@@ -48,10 +48,6 @@ def guessRandomNumber (randomNumb):
                 print("DOPE! please guess a NUMBER from 1 to 10!")
 
 
-
-
-
-
             if num == randomNumb:
                     print("Hooray! You guessed the number I was thinking of!!!!")
                     guessNum=True
@@ -59,7 +55,7 @@ def guessRandomNumber (randomNumb):
                 print("Your guess is HOT!!!...CALIENTE!!!")
                 if guessChance==3:
                     guessNum=True
-                    print("The number I was thinking of is:")
+                    print("Sorry!!!! The number I was thinking of is:")
                     print(randomNumb)
                 guessChance = guessChance + 1
 
@@ -68,7 +64,7 @@ def guessRandomNumber (randomNumb):
                 print("Your guess is WARM!")
                 if guessChance == 3:
                     guessNum = True
-                    print("The number I was thinking of is:")
+                    print("Sorry!!!! The number I was thinking of is:")
                     print(randomNumb)
                 guessChance = guessChance + 1
             else:
@@ -76,13 +72,15 @@ def guessRandomNumber (randomNumb):
                     print("Your guess is COLD..BRRRR")
                 if guessChance == 3:
                     guessNum = True
-                    print("The number I was thinking of is:")
+                    print("Sorry!!!  The number I was thinking of is:")
                     print(randomNumb)
                 guessChance = guessChance + 1
         wantToContinue = str(input("--Do you want to play again?  Press Q if you want to quit, all other input continues:"))
         wantToContinue = wantToContinue.strip()
         if wantToContinue == "Q" or wantToContinue == "q":
             continueProgram = False
+        else:
+            main()
 
 
 main()
