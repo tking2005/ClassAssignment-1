@@ -26,23 +26,31 @@ def guessRandomNumber (randomNumb):
             validInput = False
 
             while (validInput == False):
-                global num
+
+
                 try:
-                    num = int(input("Please guess a number from 1 to 10:")) and 0<num<11
-                    return num
+                    num = int(input("Please guess a number from 1 to 10:"))
+                    num > 0 and num < 11
                     validInput = True
                 except:
                     print("DOPE! please guess a NUMBER from 1 to 10!")
 
-
-                '''if num<11 and num>0 :
+                '''try:
+                    num >0 and num<11
                     validInput = True
-                else:
+                except:
                     print("DOPE! please guess a NUMBER from 1 to 10!")
+                    '''
+
+            if num<11 and num>0 :
+                validInput = True
+            else:
+                print("DOPE! please guess a NUMBER from 1 to 10!")
 
 
-                    print("DOPE! please guess a NUMBER from 1 to 10!") 
-'''
+
+
+
 
             if num == randomNumb:
                     print("Hooray! You guessed the number I was thinking of!!!!")
