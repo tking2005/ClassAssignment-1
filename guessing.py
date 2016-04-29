@@ -52,10 +52,10 @@ def guessRandomNumber (randomNumb):
                     print("DOPE!...I said a NUMBER from 1 to 10!")
                     '''
 
-            if num<11 and num>0 or num!=int:
-                validInput = True
-            else:
+            if  num>11 or num<0 or (num!=int):
                 print("Silly...I said a NUMBER from 1 to 10!")
+            else:
+                validInput = True
 
                 if guessChance == 3:
                     guessNum = True
@@ -88,7 +88,7 @@ def guessRandomNumber (randomNumb):
                     print(randomNumb)
                 guessChance = guessChance + 1
             else:
-                if (num <randomNumb or num>randomNumb) and (guessChance!=4):
+                if (num <randomNumb or num>randomNumb) and (guessChance!=4) and (0<num<11):
                     print("Sorry!!!Your guess is COLD..BRRRR")
                 if guessChance == 3 and num!=randomNumb:
                     guessNum = True
