@@ -6,5 +6,6 @@ def main():
     b=len(myList)
     for a in range(0,b):
         print(myList[a])
+        
 
 main()
