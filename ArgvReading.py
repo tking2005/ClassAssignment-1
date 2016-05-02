@@ -22,15 +22,23 @@ def arg3():
 # the following reads a file as an argument
 def readfilearg():
     ValidFile=False
+
     while ValidFile==False:
         try:
             file = sys.argv[1]  # get the file from the argument
+            print(file)
             f = open(file, "r")  # opens the file essay.txt
-            print(f.read())
+            print(file)
+            apple=f.read()
+
             ValidFile=True
         except:
             print("File not found")
+            print("This is the name of the script: ")
+            print("Number of arguments: ",)
+            print("The arguments are: ",)
             break
+        print(apple)
 
 #uncomment whichever function call you want to run
 #arg1()
