@@ -25,24 +25,62 @@ def countWords ():
     file = open("C:/Users/Student 12/Documents/test.txt", "r")
     eachWord=""
     endOfLineCharacters = ""
+    goodCharacter = ""
+    goodSpecialCharacter = True
     validWord = 0
     #endOfFile = len(file)
     count=0
     counter=0
+    countValue=0
+    # going through each word in the essay
     while counter < len(essayList):
         eachWord = essayList[counter]
         #print (endOfLineCharacters)
         #print (len(eachWord))
 
         counter+=1
+        #test the length of each word
         for count in range(0, len(eachWord)):
 
             #print (endOfLineCharacters)
-            if (len(eachWord)>3) and ((eachWord[count] != '!') or (eachWord[count] != '?') or (eachWord[count] != '.') or (eachWord[count] != ';') or(eachWord[count] != ':')):
-                validWord+=1
+            if (len(eachWord)>3):
+                countValue=0
 
+                while countValue < (len(eachWord)):
+                    lastCharacter=len(eachWord)
+                    #print(eachWord[countValue])
+                    goodCharacter=eachWord[countValue].isalpha()
+                    if goodCharacter==False or (eachWord[2]=='\'' or eachWord[3]=='\''):
+                        print("character not acceptable")
+                        print(eachWord[countValue])
+
+
+                    if (eachWord[countValue] == '\''):
+                        print(eachWord[countValue])
+                        goodCharacter= True
+                        print ("good character apostrophe")
+
+
+                    if (countValue==lastCharacter) and ((eachWord[countValue] == '!') or (eachWord[countValue] == '?')or (eachWord[countValue] == '.')or (eachWord[countValue] == ':')or (eachWord[countValue] == ';')):
+                        goodCharacter=True
+
+
+
+
+
+
+
+
+
+                    countValue +=1
+
+
+
+            #and ((eachWord[count] != '!') or (eachWord[count] != '?') or (eachWord[count] != '.') or (eachWord[count] != ';') or(eachWord[count] != ':')):
+            validWord+=1
+        else:
             count += 1
-            print (validWord)
+            #print (validWord)
     #return endOfLineCharacters
     #print (validWord)
     #return validWord
