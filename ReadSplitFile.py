@@ -49,20 +49,35 @@ def countWords ():
                 while countValue < (len(eachWord)):
                     lastCharacter=len(eachWord)
                     #print(eachWord[countValue])
+                    goodCharacter=True
                     goodCharacter=eachWord[countValue].isalpha()
-                    if goodCharacter==False or (eachWord[2]=='\'' or eachWord[3]=='\''):
-                        print("character not acceptable")
-                        print(eachWord[countValue])
+
+                    while (goodCharacter==False):
+                        if  (eachWord[2]=='\'' or eachWord[3]=='\''):
+                            print("character not acceptable")
+                            print(eachWord[countValue])
+                            print(countValue)
+                            countValue = countValue+ 1
+                            goodCharacter =True
+                            #return invalidWord
+                            #break
 
 
-                    if (eachWord[countValue] == '\''):
-                        print(eachWord[countValue])
-                        goodCharacter= True
-                        print ("good character apostrophe")
+                        if (eachWord[countValue] == '\''):
+                            print(eachWord[countValue])
+                            goodCharacter=True
+                            countValue = countValue+1
+                            print ("good character apostrophe")
+                            break
 
 
-                    if (countValue==lastCharacter) and ((eachWord[countValue] == '!') or (eachWord[countValue] == '?')or (eachWord[countValue] == '.')or (eachWord[countValue] == ':')or (eachWord[countValue] == ';')):
-                        goodCharacter=True
+                        if (countValue==lastCharacter) and ((eachWord[countValue] == '!') or (eachWord[countValue] == '?')or (eachWord[countValue] == '.')or (eachWord[countValue] == ':')or (eachWord[countValue] == ';')):
+                            goodCharacter=True
+                            countValue = countValue+ 1
+
+                        else:
+                            countValue = countValue + 1
+                            goodCharacter=True
 
 
 
@@ -72,7 +87,7 @@ def countWords ():
 
 
 
-                    countValue +=1
+
 
 
 
