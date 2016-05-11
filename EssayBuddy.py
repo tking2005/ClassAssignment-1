@@ -2,17 +2,14 @@ import sys
 
 def main():
     print("")
-    print(
-        "*************************************************************************************************************************")
-    print("\t\tWelcome To Taryn's & Josue's \'Essay Buddy\' Software Program."
-          "\nThis Program Will Assist You In Keeping Track With Your Words Count & Average In An Uploaded Essay In Text File Format."
-          "\n\t\tPlease Upload Your Text or \'.txt\' File Into The Program:"
-          "\n\tPlease Type In The Following Command To Begin, Example: python EssayBuddy.py YourEssay.txt."
-          "\n\t\tWhere, \'YourEssay.txt\', Will Be The Name Of Your Text File.")
-    print(
-        "*************************************************************************************************************************")
-    print(
-        "*************************************************************************************************************************")
+    print("******************************************************************************************************************************************")
+    print("\t\t\tWelcome To Taryn's & Josue's \'Essay Buddy\' Software Program."
+          "\nThis Program Will Assist You In Keeping Track With Your Words Count & Average, In An Uploaded English Language Essay In Text File Format."
+          "\n\t\t\tPlease Upload Your Text or \'.txt\' File Into The Program:"
+          "\n\t\tPlease Type In The Following Command To Begin, Example: python EssayBuddy.py YourEssay.txt."
+          "\n\t\t\tWhere, \'YourEssay.txt\', Will Be The Name Of Your Text File.")
+    print("******************************************************************************************************************************************")
+    print("******************************************************************************************************************************************")
     print("")
 
     readfile()
@@ -27,7 +24,7 @@ def readfile():
         return
     else:
         print("")
-        print("Your uploaded file:",file,"is a valid text file. See your word counts and and average below.")
+        print("Your uploaded file:",file,"is a valid text file. See your word counts and average below.")
         print("")
 
     f=open(file,"r") #opens the file essay.txt
@@ -39,7 +36,7 @@ def checkfile(report):
     endofsentence=0
     count=len(report)
     for a in range(0,count):
-        if report[a]=='.'or report[a]==','or report[a]=='!'or report[a]==';' or report[a]==':' or report[a]=='?':
+        if report[a]=='.'or report[a]=='!'or report[a]==';' or report[a]==':' or report[a]=='?':
             #print("Where special characters are found in the words of the report: ", report[a])
             endofsentence+=1
             #print("")
@@ -48,7 +45,7 @@ def checkfile(report):
 
     words=report.split()
     print("")
-    print(words)
+    #print(words)
     print("")
 
     validwords=0
@@ -59,9 +56,9 @@ def checkfile(report):
 
         wordsLength=len(actualWord)
         if ((wordsLength >=4 and actualWord.isalpha()) or (wordsLength >=4 and actualWord.isalpha() + actualWord.endswith(';')) or (wordsLength >=4 and actualWord.isalpha() + actualWord.endswith('!')) or
-           (wordsLength >=4 and actualWord.isalpha() + actualWord.endswith('!!!')) or (wordsLength >=4 and actualWord.isalpha() + actualWord.endswith(':')) or
-           (wordsLength >=5 and actualWord.isalpha() + actualWord.endswith('.')) or (wordsLength >=6 and actualWord.isalpha() + actualWord.endswith('\'s')) or  (wordsLength >=4 and actualWord.isalpha() + actualWord.endswith(' ')) or
-           (wordsLength >=4 and actualWord.isalpha() + actualWord.endswith('?')) or (wordsLength >=4 and actualWord.isalpha() + actualWord.endswith('???'))):
+           (wordsLength >=4 and actualWord.isalpha() + actualWord.endswith('!!!')) or (wordsLength >=4 and actualWord.isalpha() + actualWord.endswith(':')) or (wordsLength >=5 and actualWord.isalpha() + actualWord.endswith('...')) or
+           (wordsLength >=4 and actualWord.isalpha() + actualWord.endswith('.')) or (wordsLength >=6 and actualWord.isalpha() + actualWord.endswith('\'s')) or  (wordsLength >=4 and actualWord.isalpha() + actualWord.endswith(' ')) or
+           (wordsLength >=4 and actualWord.isalpha() + actualWord.endswith('?')) or (wordsLength >=4 and actualWord.isalpha() + actualWord.endswith(',')) or (wordsLength >=4 and actualWord.isalpha() + actualWord.endswith('???'))):
            validwords+=1
            #print("***VALID WORDS***: ", actualWord)
         b+=1
